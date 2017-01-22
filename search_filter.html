@@ -1,0 +1,40 @@
+<!doctype html>
+<!--Angular JS Sorting Search filter-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+    <head>
+    <title></title>
+        <script src="Scripts/angular.min.js"></script>
+        <script src="Scripts/search_filter.js"></script>
+        <link href="sortRows.css" rel="stylesheet"/>
+    </head>
+<body ng-app = "myModule12">
+<div ng-controller="myController">
+    Search : <input type="text" placeholder="Search Employee" ng-model="SearchText"/>
+    </br> </br>
+    <table>
+    <thead>
+        <tr>
+       <th>FirstName</th>
+        <th>Date Of Birth</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat = "employee in employees | filter:SearchText">
+                <td>{{employee.name }}</td>
+                <td>{{employee.dateofBirth |  date:"dd/MM/yyyy" }}</td>
+                <td>{{employee.gender }}</td>
+                <td>{{employee.salary }}</td>
+            
+            
+            </tr>
+        
+        </tbody>
+    
+    </table>
+    
+</div>
+</body>
+    
+</html>
