@@ -1,0 +1,42 @@
+<!doctype html>
+<!--Angular JS Sorting Search filter-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+    <head>
+    <title></title>
+        <script src="Scripts/angular.min.js"></script>
+        <script src="Scripts/filter_by_multiple_properties.js"></script>
+        <link href="Style.css" rel="stylesheet"/>
+    </head>
+<body ng-app = "filter_by_multiple_properties">
+<div ng-controller="myController">
+    Search : <input type="text" ng-model="searchText" placeholder="Search city & name " />
+    </br> </br>
+    <table>
+    <thead>
+        <tr>
+       <th>Name</th>
+        <th>Date Of Birth</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        <th>City</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat = "employee in employees | filter: search">
+                <td>{{employee.name }}</td>
+                <td>{{employee.dateofBirth |  date:"dd/MM/yyyy" }}</td>
+                <td>{{employee.gender }}</td>
+                <td>{{employee.salary }}</td>
+                <td>{{employee.city }}</td>
+            
+            
+            </tr>
+        
+        </tbody>
+    
+    </table>
+    
+</div>
+</body>
+    
+</html>

@@ -1,0 +1,38 @@
+    <!doctype html>
+<!--Angular JS filters, Sorting Order by-->
+<html ng-app = "customfilter">
+    <head>
+        <script src="Scripts/angular.min.js"></script>
+        <script src="Scripts/custom_filter.js"></script>
+        <script src="Scripts/filter.js"></script>
+        <link href="Style.css" rel="stylesheet">
+    </head>
+<body ng-controller="myController">
+    <table>
+    <thead>
+        <tr>
+       <th>Name</th>
+        <th>Date of Birth</th>
+        <th>Gender</th>
+        <th>Salary(number)</th>
+        <th>Salary(currency)</th>
+        </tr>
+        </thead>
+        <tbody>
+            
+            <tr ng-repeat = "employee in employees ">
+
+                <td>{{employee.name |uppercase }}</td>
+                <td>{{employee.dateofBirth | date:"dd/MM/yyyy" }}</td>
+                <td>{{employee.gender | gender }}</td>
+                <td>{{employee.salary | number:2 }}</td> 
+                <td>{{employee.salary | currency:"$":1 }}</td> 
+            </tr>
+        
+        </tbody>
+    
+    </table>
+    
+</body>
+    
+</html>
