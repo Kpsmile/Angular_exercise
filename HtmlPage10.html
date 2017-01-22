@@ -1,0 +1,43 @@
+<!Doctype html>
+<!--Angular JS  Sorting Order by-->
+<html ng-app = "myModule9">
+    <head>
+        <title></title>
+        <script src="Scripts/angular.min.js"></script>
+        <script src="Scripts/Script10.js"></script>
+        <link href="Style.css" rel="stylesheet">
+    </head>
+<body ng-controller="myController">
+  Order By: <select ng-model="sortColumn">
+                <option value="name">Name ASC</option>
+                <option value="dateofBirth">Date of Birth ASC</option>
+                <option value="gender">Gender ASC</option>
+                <option value="-salary">Salary DESC</option>
+    </select>
+    <table>
+    <thead>
+        <tr>
+       <th>Name</th>
+        <th>Date of Birth</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        </tr>
+        </thead>
+        <tbody>
+            
+<!--            <tr ng-repeat = "employee in employees | limitTo:rowLimit">-->
+<!--            <tr ng-repeat = "employee in employees | orderBy:  'name':true">-->
+              <tr ng-repeat = "employee in employees | orderBy:  sortColumn">
+                <td>{{employee.name |uppercase }}</td>
+                <td>{{employee.dateofBirth | date:"dd/MM/yyyy" }}</td>
+                <td>{{employee.gender | lowercase }}</td>
+                <td>{{employee.salary  }}</td>  
+            </tr>
+        
+        </tbody>
+    
+    </table>
+    
+</body>
+    
+</html>

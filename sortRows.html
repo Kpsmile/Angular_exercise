@@ -1,0 +1,42 @@
+<!doctype html>
+<!--Angular JS Sorting Order by-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+    <head>
+    <title></title>
+        <script src="Scripts/angular.min.js"></script>
+        <script src="Scripts/sortRows.js"></script>
+        <link href="sortRows.css" rel="stylesheet"/>
+    </head>
+<body ng-app = "myModule11">
+<div ng-controller="myController">
+    <table>
+        <thead>
+            <tr>
+               <th ng-click = "sortData('name')">
+                        Name <div ng-class="getSortClass('name')"> </div>
+                </th>
+                <th ng-click = "sortData('dateofBirth')">
+                        Date of Birth <div ng-class="getSortClass('dateofBirth')"> </div>
+                </th>
+                <th ng-click = "sortData('gender')">
+                        Gender <div ng-class="getSortClass('gender')"> </div>
+                </th>
+                <th ng-click = "sortData('salary')">
+                        Salary  <div ng-class="getSortClass('salary')"> </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+              <tr ng-repeat = "employee in employees | orderBy:  sortColumn:reverseSort">
+                <td>{{employee.name |uppercase }}</td>
+                <td>{{employee.dateofBirth | date:"dd/MM/yyyy" }}</td>
+                <td>{{employee.gender | lowercase }}</td>
+                <td>{{employee.salary  }}</td>  
+            </tr>
+        
+        </tbody>
+    </table>
+    </div>
+</body>
+    
+</html>

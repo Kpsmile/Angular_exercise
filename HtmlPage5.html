@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html ng-app = "myModule5">
+    <head>
+        <script src="Scripts/angular.min.js"></script>
+        <script src="Scripts/Script5.js"></script>
+    </head>
+<body ng-controller="myController">
+    <table>
+        <tr>
+            <td>FirstName</td>
+            <td>
+                <input type="text" ng-model="employee.firstName" />
+            </td>
+        </tr>
+        
+        <tr>
+            <td>LastName</td>
+            <td>
+                <input type="text" ng-model="employee.lastName" />
+            </td>
+        </tr>
+        
+        <tr>
+            <td>Gender</td>
+            <td>
+                <input type="text" ng-model="employee.gender" />
+            </td>
+        </tr>
+    
+    
+    </table>
+    <br />
+    
+    <table>
+        <tr>
+            <td>FirstName</td>
+            <td>
+                {{employee.firstName}}
+            </td>
+        </tr>
+        
+        <table>
+        <tr>
+            <td>LastName</td>
+            <td>
+                {{employee.lastName}}
+            </td>
+        </tr>
+            
+            <table>
+        <tr>
+            <td>Gender</td>
+            <td>
+                {{employee.gender}}
+            </td>
+        </tr>
+    
+    
+    </table>
+    
+<!--
+            <div >
+            FirstName : {{employee.firstName}} 
+            </div >
+    <div >
+            LastName : {{employee.lastName}} 
+            </div >
+-->
+    
+</body>
+    
+</html>

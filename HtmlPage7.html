@@ -1,0 +1,24 @@
+<!doctype html>
+
+<html ng-app = "myModule7">
+    <head>
+        <script src="Scripts/angular.min.js"></script>
+        <script src="Scripts/Script7.js"></script>
+    </head>
+<body ng-controller="myController">
+    <ul>
+        <li ng-repeat="country in countries"  ng-init="parentIndex=$index">
+            {{country.name}} - Index= {{$index}}
+            <ul>
+                <li ng-repeat="city in country.cities">
+                    {{city.name}} -Parent Index={{parentIndex}}, Index= {{$index}}
+                
+                </li>
+            </ul>
+        
+        </li>
+    
+    </ul>    
+</body>
+    
+</html>

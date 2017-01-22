@@ -1,0 +1,39 @@
+<!doctype html>
+<!--Angular JS filters, Sorting Order by-->
+<html ng-app = "myModule9">
+    <head>
+        <script src="Scripts/angular.min.js"></script>
+        <script src="Scripts/Script9.js"></script>
+        <link href="Style.css" rel="stylesheet">
+    </head>
+<body ng-controller="myController">
+Rows to Display:<input type="number" step="1" min="0" max="5" ng-model="rowLimit"/>
+   <br/><br/>
+    <table>
+    <thead>
+        <tr>
+       <th>Name</th>
+        <th>Date of Birth</th>
+        <th>Gender</th>
+        <th>Salary(number)</th>
+        <th>Salary(currency)</th>
+        </tr>
+        </thead>
+        <tbody>
+            
+            <tr ng-repeat = "employee in employees | limitTo:rowLimit">
+
+                <td>{{employee.name |uppercase }}</td>
+                <td>{{employee.dateofBirth | date:"dd/MM/yyyy" }}</td>
+                <td>{{employee.gender | lowercase }}</td>
+                <td>{{employee.salary | number:2 }}</td> 
+                <td>{{employee.salary | currency:"$":1 }}</td> 
+            </tr>
+        
+        </tbody>
+    
+    </table>
+    
+</body>
+    
+</html>
