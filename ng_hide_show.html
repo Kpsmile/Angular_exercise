@@ -1,0 +1,36 @@
+<!Doctype html>
+<!--Angular JS Sorting Order by-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+    <head>
+    <title></title>
+        <script src="Scripts/angular.min.js"></script>
+        <script src="Scripts/ng_hide_show.js"></script>
+        <link href="Style.css" rel="stylesheet"/>
+    </head>
+<body ng-app = "ng_hide_show">
+<div ng-controller="myController">
+    <input type="checkbox" ng-model="hideSalary" /> HideSalary
+    <br/><br/>
+    <table>
+        <thead>
+            <tr>
+               <th> Name </th>
+                <th>DateofBirth </th>
+                <th> Gender </th>
+                <th ng-hide ="hideSalary"> Salary </th>
+            </tr>
+        </thead>
+        <tbody>
+              <tr ng-repeat = "employee in employees">
+                <td>{{employee.name |uppercase }}</td>
+                <td>{{employee.dateofBirth | date:"dd/MM/yyyy" }}</td>
+                <td>{{employee.gender | lowercase }}</td>
+                <td ng-hide ="hideSalary"> {{employee.salary}}</td>  
+            </tr>
+        
+        </tbody>
+        </table>
+    </div>
+</body>
+    
+</html>

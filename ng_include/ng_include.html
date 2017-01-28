@@ -1,0 +1,25 @@
+<!Doctype html>
+<!--Angular JS include-->
+<html >
+    <head>
+        <title></title>
+        <script src="angular.min.js"></script>
+        <script src="ng_include.js"></script>
+        <link href="Style.css" rel="stylesheet"/>
+    </head>
+    <body  ng-app = "ng_incude">
+        <div ng-controller="myController">
+            Select View:
+            <select ng-model="employeeView">
+                <option value="EmployeeTable.html">Table</option>
+                <option value="EmployeeList.html">List</option>
+            </select>
+            <br/> <br/>
+            <div ng-include ="employeeView"></div>
+        </div>
+    </body>
+
+   
+</body>
+    
+</html>
