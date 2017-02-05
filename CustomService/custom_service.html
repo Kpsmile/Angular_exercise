@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Custom Service in Angular JS</title>
+    <script src="angular.min.js"></script>
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>-->
+    <script src="Script.js"></script>
+    <script src ="stringService.js"></script>
+<!--    <script src="Style.css"></script>-->
+     <link rel="stylesheet" href="Style.css">
+    </head>
+    <body ng-app="myModel">
+    <div ng-controller="myController">
+        <table>
+            <tr>
+                <td> Input String</td>
+                <td>
+                    <input type="text" ng-model="input"/>
+                </td>
+            </tr>
+            <tr>
+                <td> Output String</td>
+                <td>
+                    <input type="text" ng-model="output"/>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button ng-click="transformString(input)"> Process String></button>
+<!--                     <button ng-click="toCamelCase(input)">Convert to camelCase</button>-->
+                </td>
+            </tr>
+        </table>
+        </div>
+    </body>
+</html>

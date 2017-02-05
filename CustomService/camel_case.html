@@ -1,0 +1,22 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Creating AngularJS CamelCase Service</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+  <script src="camel_case.js" charset="utf-8"></script>
+  <script src="camelCaseService.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body ng-app="camelCase">
+  <div ng-controller="myController">
+    String to Convert :
+    <input type="text" ng-model="inputStr" />
+    <br/>
+    Converted String :
+    <input type="text" ng-model="outputStr" />
+    <br/>
+    <button ng-click="toCamelCase(inputStr)">Convert to camelCase</button>
+  </div>
+
+</body>
+</html>
