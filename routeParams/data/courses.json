@@ -1,0 +1,17 @@
+[
+  {
+    "name" : "Java",
+    "cost" : "100",
+    "instructor" : "kpsingh"
+  },
+  {
+    "name" : "Python",
+    "cost" : "200",
+    "instructor" : "AnoopSingh"
+  },
+  {
+    "name" : "Sql",
+    "cost" : "150",
+    "instructor" : "Amit Bansal"
+  }
+]
